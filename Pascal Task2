@@ -1,0 +1,17 @@
+program Task2;
+  var i:integer; b: array of integer; n:integer;
+begin
+  writeln('Введите какое количество чисел в массиве и нажмите Enter:');
+read(n);
+  b:=ArrRandom(n);
+  writeln('Сгенерированные числа в массиве:');
+for i:=1 to b.Length do
+  write('b[',i,']=',b[i-1],' ');
+  writeln();
+for i:=1 to b.Length-2 do
+  if i mod 2 = 0 then
+    writeln(b[i]+b[i+1]);
+for i:=1 to b.Length-2 do
+  if i mod 2 <> 0 then
+    writeln(b[i]*b[i+1]);
+end.
