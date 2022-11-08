@@ -1,17 +1,17 @@
 program Task2;
-  var i:integer; b: array of integer; n:integer;
+  var i:integer; b: array of integer; n:integer; // созданы два интеджера и один массив состоящий из чисел интеджер
 begin
   writeln('Введите какое количество чисел в массиве и нажмите Enter:');
 read(n);
-  b:=ArrRandom(n);
+  b:=ArrRandom(n); // рандомно генерируем количество чисел n в массиве b
   writeln('Сгенерированные числа в массиве:');
-for i:=1 to b.Length do
-  write('b[',i,']=',b[i-1],' ');
+for i:=1 to b.Length do // условие пока число i равняется от 1 до конца количества чисел массива b 
+  write('b[',i,']=',b[i-1],' '); // мы выводим чему равно число массива
   writeln();
+for i:=1 to b.Length-2 do // условие пока i от 1 до конца чисел массива b -2 
+  if i mod 2 = 0 then // условие если порядковое число массива четное то
+    writeln(b[i]+b[i+1]); // выполняется данное условие
 for i:=1 to b.Length-2 do
-  if i mod 2 = 0 then
-    writeln(b[i]+b[i+1]);
-for i:=1 to b.Length-2 do
-  if i mod 2 <> 0 then
+  if i mod 2 <> 0 then // условие если порядковое число массива не четное то
     writeln(b[i]*b[i+1]);
 end.
